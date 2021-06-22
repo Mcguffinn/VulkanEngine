@@ -2,6 +2,7 @@
 
 #include "lve_window.hpp"
 #include "lve_pipeline.hpp"
+#include "lve_window.hpp"
 
 namespace lve {
 	class FirstApp {
@@ -13,6 +14,11 @@ namespace lve {
 		void run();
 	private:
 		LveWindow lveWindow{ WIDTH, HEIGHT, "Vulkan Window" };
-		LvePipeLine lvePipeLine{ "Shaders/simple_shader.vert.spv", "Shaders/simple_shader.frag.spv" };
+		LveDevice lveDevice{ lveWindow };
+		LvePipeLine lvePipeLine{
+			lveDevice, 
+			"Shaders/simple_shader.vert.spv", 
+			"Shaders/simple_shader.frag.spv", 
+			LvePipeLine::defaultPiplineConfigInfo(WIDTH, HEIGHT) };
 	};
 }
