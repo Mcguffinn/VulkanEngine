@@ -19,6 +19,6 @@ namespace lve {
 			lveDevice, 
 			"Shaders/simple_shader.vert.spv", 
 			"Shaders/simple_shader.frag.spv", 
-			LvePipeLine::defaultPiplineConfigInfo(WIDTH, HEIGHT) };
+			LvePipeLine::defaultPipelineConfigInfo(WIDTH, HEIGHT) };
 	};
 }
